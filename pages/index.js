@@ -3,10 +3,20 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Link from 'next/link'
 
-export default function Home() {
 
-  const data = require('../blogData.json')
-  const latestpost = data.blogEntries.length - 1
+export const getStaticProps = async () => {
+
+  const res = await fetch("https://fsj-johan.vercel.app/api/posts");
+  const json = await res.json();
+    return {
+      props: {
+        data: json,
+      },
+    };
+}
+
+
+export default function Home({data}) {
 
   return (
     <Layout navPage={1}>
@@ -17,7 +27,7 @@ export default function Home() {
       <div className="paragraph">
 
           Wanna see my latest post? 
-          <Link href={'/PostCollector/' + latestpost}><a className="link">Click here</a></Link> !
+          <Link href={'/PostCollector/' + data[data.length -1].cid}><a className="link">Click here</a></Link> !
       </div>
 
     </Layout>

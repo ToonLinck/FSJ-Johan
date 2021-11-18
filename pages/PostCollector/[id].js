@@ -5,62 +5,47 @@ import PageHeader from '../../components/PageHeader'
 
 export const getStaticPaths = async () => {
 
-    const res = await fetch('https://gist.githubusercontent.com/JohanLinck/2df42c7f25a63ce900e41a68c467b7e4/raw/5fe85cab988b715ac294ee515b2bbba19ddd758f/blogData.json')
-    const data = await res.json()
+    const res = await fetch("https://fsj-johan.vercel.app/api/posts");
+    const json = await res.json();
 
-    const paths = data.map((entry) => {
-
+    const paths = json.map((entry) => {
         return {
-
             params: { 
-                id: entry.id.toString()
+                id: entry.cid.toString()
             }
-
         }
-
-
     })
-
-
     return{
-
         paths,
         fallback: false
-
-
     }
 }
 
 export const getStaticProps = async (context) => {
     const id = context.params.id
-    const res = await fetch('https://gist.githubusercontent.com/JohanLinck/2df42c7f25a63ce900e41a68c467b7e4/raw/5fe85cab988b715ac294ee515b2bbba19ddd758f/blogData.json')
-    const db = await res.json()
 
+    const res = await fetch('https://fsj-johan.vercel.app/api/posts');
+    const json = await res.json();
 
-  
     return {
       props: {
-
-        id,
-        data: db
-  
+        data: json.filter(post => post.cid.toString() === id),
       },
-  
-    }
+    };
   
 }
 
 
-function Post({data, id}) {
+function Post({data}) {
 
-    const objekt = data[parseInt(id,10)]
+    const cont = data[0]
 
     return (
         <Layout >
-            <PageHeader> {objekt.title} </PageHeader>
-            <div className="dateContainer"> {objekt.date} </div>
+            <PageHeader> {cont.title} </PageHeader>
+            <div className="dateContainer"> {cont.date} </div>
 
-            <div className="contentContainer">{objekt.content}</div>
+            <div className="contentContainer">{cont.content}</div>
 
 
         </Layout>

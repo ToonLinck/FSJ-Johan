@@ -7,22 +7,15 @@ import { useRouter } from 'next/router'
 
 
 
-export const getStaticProps = async () => {
-
-    const res = await fetch('https://gist.githubusercontent.com/JohanLinck/2df42c7f25a63ce900e41a68c467b7e4/raw/5fe85cab988b715ac294ee515b2bbba19ddd758f/blogData.json')
-    const db = await res.json()
-  
+export async function getStaticProps(context) {
+    const res = await fetch("https://fsj-johan.vercel.app/api/posts");
+    const json = await res.json();
     return {
       props: {
-  
-        data: db
-  
+        data: json,
       },
-  
-    }
-  
+    };
 }
-
 
 function Index({data}) {
 
@@ -33,7 +26,7 @@ function Index({data}) {
     useEffect (() => {
 
         setPosts(data.sort(function(a,b) {
-            return b.id - a.id
+            return b.cid - a.cid
         }))
 
     }, [])
@@ -47,8 +40,8 @@ function Index({data}) {
 
             <div className="postblogcontainer"> 
                         {posts.map((elm) => (<BlogBox 
-                                    key={elm.id} 
-                                    onClick={() => {router.push('/PostCollector/' + elm.id)}} 
+                                    key={elm._id} 
+                                    onClick={() => {router.push('/PostCollector/' + elm.cid)}} 
                                     title={elm.title} 
                                     date={elm.date} 
                                     desc={`${elm.content.substring(0,120)}...`} 
