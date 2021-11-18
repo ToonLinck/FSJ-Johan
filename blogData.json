@@ -1,0 +1,37 @@
+{
+
+    "blogEntries" : [
+
+        {
+            "id" : 0,
+            "title" : "First blog",
+            "date" : "01/01/21",
+            "content" : "Labore nulla mollit non minim. Velit ad deserunt quis minim do consectetur. Ad aliqua veniam enim tempor. Cupidatat magna ad aute adipisicing voluptate nostrud.                       Enim commodo officia sunt veniam esse anim exercitation commodo incididunt labore. Commodo dolor fugiat qui est cillum duis aliquip qui pariatur duis. Nlla ut veniam tempor minim. Pariatur laboris id minim enim. Deserunt dolor enim ut laborum in dolore aute elit reprehenderit culpa anim cupidatat.                        Non ex aliqua cupidatat deserunt consequat nisi amet. Culpa sit deserunt laborum eiusmod consectetur sit est sit. Cupidatat pariatur incididunt ullamco labore quis. Dolore reprehenderit ullamco veniam ullamco quis aliqua ipsum officia proident cillum mollit velit tempor est. Qui ut aliquip est nulla qui id elit aliqua id. Lorem non ea velit anim mollit irure ea labore reprehenderit laboris minim adipisicing. Duis qui laborum sit amet sit voluptate irure occaecat et id cupidatat anim."
+        },
+
+        {
+            "id" : 1,
+            "title" : "Test",
+            "date" : "00/00/00",
+            "content" : "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"
+        },
+
+        {
+            "id" : 2,
+            "title" : "Update",
+            "date" : "09/11/21",
+            "content" : "It finally works yesssss"
+        }, 
+
+        {
+            "id" : 3,
+            "title" : "Der Nächste Schritt",
+            "date" : "09/11/21",
+            "content" : "Ich baue jetzt weiter! Bald kann man ganz intuitiv einen Blogeintrag verfassen ohne dafür auf die JSON zugreifen zu müssen. Die about und home page sind aber noch komplett leer"
+        }
+
+    ]
+
+
+
+}

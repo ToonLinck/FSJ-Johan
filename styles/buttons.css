@@ -1,0 +1,40 @@
+
+
+.navButton{
+
+    padding-left: 10%;
+
+    height: 8%;
+    width: 100%;
+
+    background-color:  #ECECEC;
+
+    font-size: 170%;
+    font-weight: bold;
+    text-align: left;
+    
+
+    border-style: none;
+    border-bottom: 2px solid lightgray;
+
+}
+
+.navButtonClicked{
+
+    background-color: lightgray;
+    border-right: 2px solid #71C25F;
+
+}
+
+.navButtonNotClicked{
+
+    transition: ease .2s;
+
+}
+
+.navButtonNotClicked:hover{
+
+    background-color: #B9DBB2 ;
+
+}
+

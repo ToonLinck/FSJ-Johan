@@ -1,0 +1,63 @@
+.pageHeader{
+    
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 500%;
+
+    border-bottom: 2px solid #71C25F;
+
+
+}
+
+.paragraph{
+    font-weight: bold;
+    padding-left: 1%;
+    font-size: 120%;
+    margin: 5%;
+    margin-left: 9%;
+    background-color: #B9DBB2;
+
+}
+
+.link{
+
+    color: blue;
+    margin-left: 5px;
+
+}
+
+
+.dateContainer{
+
+    font-size: 130%;
+
+}
+
+.contentContainer{
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 5%;
+    margin-top: 3%;
+    padding: 3%;
+
+    font-size: 160%;
+
+    overflow-wrap: break-word;
+    overflow-y: auto;
+
+    border-style: none;
+    border-radius: 10px;
+    background-color: #ECECEC;
+
+
+}
+
+
+
+
+
+
