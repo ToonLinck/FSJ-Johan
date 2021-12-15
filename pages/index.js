@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Link from 'next/link'
 
-
+/*
 export const getStaticProps = async () => {
 
   const res = await fetch("https://fsj-johan.vercel.app/api/posts");
@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
       },
     };
 }
-
+*/
 
 export default function Home({data}) {
 
@@ -27,7 +27,7 @@ export default function Home({data}) {
       <div className="paragraph">
 
           Wanna see my latest post? 
-          <Link href={'/PostCollector/' + data[data.length -1].cid}><a className="link">Click here</a></Link> !
+          <Link href={'/PostCollector/' + 0}><a className="link">Click here</a></Link> !
       </div>
 
     </Layout>

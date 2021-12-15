@@ -3,28 +3,12 @@ import Layout from '../../components/Layout'
 import PageHeader from '../../components/PageHeader'
 
 
-export const getStaticPaths = async () => {
 
-    const res = await fetch("https://fsj-johan.vercel.app/api/posts");
-    const json = await res.json();
-
-    const paths = json.map((entry) => {
-        return {
-            params: { 
-                id: entry.cid.toString()
-            }
-        }
-    })
-    return{
-        paths,
-        fallback: false
-    }
-}
-
-export const getStaticProps = async (context) => {
+/*
+export const getServersideProps = async (context) => {
     const id = context.params.id
 
-    const res = await fetch('https://fsj-johan.vercel.app/api/posts');
+    const res = await fetch('http://localhost:3000/api/posts/'+id);
     const json = await res.json();
 
     return {
@@ -34,11 +18,12 @@ export const getStaticProps = async (context) => {
     };
   
 }
+*/
 
 
-function Post({data}) {
+function Post() {
 
-    const cont = data[0]
+    const cont = {title: "",date:"",content:""}
 
     return (
         <Layout >

@@ -6,28 +6,33 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 
-
+/*
 export async function getStaticProps(context) {
-    const res = await fetch("https://fsj-johan.vercel.app/api/posts");
-    const json = await res.json();
+
+    const res = await fetch('http://localhost:3000/api/posts')
+    const json = await res.json()
+
     return {
-      props: {
-        data: json,
-      },
-    };
-}
+        props: {data: json}
+    }
+
+}*/
+
 
 function Index({data}) {
 
     const router = useRouter()
 
-    const [posts,setPosts] = useState([])
+    const [posts,setPosts] = useState([{title: "test", cid: 0, content:"uibfigwbgubwigrub", date:"00:00:00"}])
 
     useEffect (() => {
+        if(posts.length > 1) {
+            setPosts(data.sort((a,b) => {
 
-        setPosts(data.sort(function(a,b) {
-            return b.cid - a.cid
-        }))
+                return b.cid - a.cid
+
+            }))
+        }
 
     }, [])
 
@@ -44,7 +49,7 @@ function Index({data}) {
                                     onClick={() => {router.push('/PostCollector/' + elm.cid)}} 
                                     title={elm.title} 
                                     date={elm.date} 
-                                    desc={`${elm.content.substring(0,120)}...`} 
+                                    desc={`${elm.content.slice(1,25)}...`} 
                                     />))}
             </div>
            
